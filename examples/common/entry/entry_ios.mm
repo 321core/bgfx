@@ -312,9 +312,8 @@ static	void* m_device = NULL;
 
 	[m_window makeKeyAndVisible];
 
-	//float scaleFactor = [[UIScreen mainScreen] scale]; // should use this, but needs to further pass the value to the `nvgBeginFrame()` call's `devicePixelRatio` parameter in `ExampleNanoVG` class' `update()` method so it can actually work properly.
-	float scaleFactor = 1.0f;
-	[m_view setContentScaleFactor: scaleFactor ];
+	float scaleFactor = [[UIScreen mainScreen] scale]; // should use this, but needs to further pass the value to the `nvgBeginFrame()` call's `devicePixelRatio` parameter in `ExampleNanoVG` class' `update()` method so it can actually work properly.
+	[m_view setContentScaleFactor: scaleFactor];
 
 	s_ctx = new Context((uint32_t)(scaleFactor*rect.size.width), (uint32_t)(scaleFactor*rect.size.height));
 	return YES;
